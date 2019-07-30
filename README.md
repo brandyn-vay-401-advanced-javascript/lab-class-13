@@ -4,9 +4,11 @@
 
 ### Author: Brandyn Vay
 
+[![Build Status](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13.svg?branch=master)](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13)
+
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
+* [submission PR](https://github.com/brandyn-vay-401-advanced-javascript/lab-class-13/pull/3)
+* [travis](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13/builds/121183046)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
 
