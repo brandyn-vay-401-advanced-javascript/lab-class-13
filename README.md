@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13.svg?branch=master)](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13)
 
 ### Links and Resources
-* [submission PR](https://github.com/brandyn-vay-401-advanced-javascript/lab-class-13/pull/3)
+* [submission PR](https://github.com/brandyn-vay-401-advanced-javascript/lab-class-13/pull/8)
 * [travis](https://travis-ci.com/brandyn-vay-401-advanced-javascript/lab-class-13/builds/121183046)
 * [back-end](https://bv-auth-bearer-server.herokuapp.com/)
 
