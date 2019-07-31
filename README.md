@@ -36,4 +36,4 @@
 * How do you run tests?
 
 #### UML
-Link to an image of the UML for your application and response to events
+[one time jwt diagram](./assets/one-time-jwt-diagram.jpg)
