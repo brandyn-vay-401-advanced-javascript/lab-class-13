@@ -61,3 +61,4 @@ users.methods.generateToken = function() {
 };
 
 module.exports = mongoose.model('users', users);
+
