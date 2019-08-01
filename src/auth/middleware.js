@@ -1,5 +1,8 @@
 'use strict';
 
+// To add and post user 
+//echo '{"username":"m", "password":"n"}' | http post :3000/signin
+
 const User = require('./users-model.js');
 
 module.exports = (capability) => {

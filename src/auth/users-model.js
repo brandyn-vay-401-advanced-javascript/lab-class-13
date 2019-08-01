@@ -4,11 +4,29 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+require('./roles-model.js');
+
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
   password: {type:String, required:true},
   email: {type: String},
   role: {type: String, default:'user', enum: ['admin','editor','user']},
+}, {toObject:{virtuals: true}, toJSON:{virtuals: true}} );
+
+users.virtual('acl', {
+  ref:'roles',
+  localField: 'role',
+  foreignField: 'role',
+  justOne: true,
+});
+
+users.pre('findOne', function() {
+  try {
+    this.populate('acl');
+  }
+  catch(e) {
+    throw new Error(e.message);
+  }
 });
 
 const capabilities = {
