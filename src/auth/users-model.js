@@ -14,7 +14,7 @@ const users = new mongoose.Schema({
 const capabilities = {
   admin: ['create', 'read', 'update', 'delete'],
   editor: ['create', 'read', 'update'],
-  user: ['read']
+  user: ['read'],
 };
 
 users.methods.can = function(capability) {
@@ -51,7 +51,7 @@ users.methods.comparePassword = function(password) {
 users.methods.generateToken = function() {
   
   let secret = process.env.SECRET;
-  let expires = { expiresIn: '2m' };
+  let expires = { expiresIn: '15m' };
 
   let token = {
     id: this._id,
