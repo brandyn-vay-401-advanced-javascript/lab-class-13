@@ -11,6 +11,16 @@ const users = new mongoose.Schema({
   role: {type: String, default:'user', enum: ['admin','editor','user']},
 });
 
+const capabilities = {
+  admin: ['create', 'read', 'update', 'delete'],
+  editor: ['create', 'read', 'update'],
+  user: ['read']
+};
+
+users.methods.can = function(capability) {
+  return capabilities[this.role].includes(capability);
+};
+
 users.pre('save', function(next) {
   bcrypt.hash(this.password, 10)
     .then(hashedPassword => {
