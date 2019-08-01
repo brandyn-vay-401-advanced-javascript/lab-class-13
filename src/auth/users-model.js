@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 
 require('./roles-model.js');
 
+const useToken = new Set();
+
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
   password: {type:String, required:true},
@@ -49,6 +51,13 @@ users.pre('save', function(next) {
 });
 
 users.statics.authenticateToken = function(token) {
+
+  if (useToken.has(token) ) {
+    return Promise.reject('Invalid Token');
+  }
+
+  useToken.add(token);
+
   let parsedToken = jwt.verify(token, process.env.SECRET);
   let query = {_id:parsedToken.id};
   return this.findOne(query);
@@ -80,3 +89,4 @@ users.methods.generateToken = function() {
 };
 
 module.exports = mongoose.model('users', users);
+
