@@ -18,6 +18,8 @@
 ### Modules
 #### `routes.js`
 #### `users-model.js`
+#### `roles-model.js`
+#### `play.js`
 
 ### Setup
 #### `.env` requirements
